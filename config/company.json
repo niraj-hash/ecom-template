@@ -1,0 +1,28 @@
+{
+  "brand": {
+    "name": "NINEEYE INFOTECH SOLUTION PRIVATE LIMITED",
+    "logo": "assets/logo.svg",
+    "logoWidth": 120
+  },
+  "address": {
+    "lines": [
+      "1st Floor, 36-07, Kamaraj Colony 2nd Street",
+      "Kodambakkam, Chennai, Tamil Nadu 600024"
+    ],
+    "phone": "+91 7094974571",
+    "email": "contact@nineeyeshop.com"
+  },
+  "invoice": {
+    "currency": "₹",
+    "locale": "en-IN",
+    "accentColor": "#000000",
+    "footerNote": ""
+  },
+  "tax": {
+    "gstin": "",
+    "pan": "",
+    "rate": 5,
+    "supplyType": "intra",
+    "priceInclusive": true
+  }
+}

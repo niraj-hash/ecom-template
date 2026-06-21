@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 130" width="260" height="130">
+  <style>
+    .word { font-family: "Courier New", monospace; font-weight: 800; font-size: 56px; letter-spacing: 4px; }
+    .dark { fill: #111111; }
+    .accent { fill: #f26522; }
+  </style>
+  <text x="6" y="56" class="word">
+    <tspan class="accent">S</tspan><tspan class="dark">HOPS</tspan>
+  </text>
+  <text x="6" y="116" class="word">
+    <tspan class="accent">O</tspan><tspan class="dark">MEGA</tspan>
+  </text>
+</svg>

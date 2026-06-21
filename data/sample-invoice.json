@@ -1,0 +1,21 @@
+{
+  "invoiceNumber": "c2050296817567924224",
+  "orderNumber": "PURQK",
+  "orderDate": "May 2, 2026",
+  "paymentMethod": "Airpay",
+  "billTo": {
+    "name": "Ravi Dhakad",
+    "lines": [
+      "Flat 102, Bldg A-3",
+      "Shree Ganesh Residency",
+      "Dombivli East 421201",
+      "Maharashtra"
+    ],
+    "email": "jane.miller_1017@gmail.com",
+    "phone": "7354868619"
+  },
+  "items": [
+    { "product": "Sky Blue Plain T-Shirt", "quantity": 1, "price": 100.0 }
+  ],
+  "tax": 4.76
+}

@@ -1,0 +1,29 @@
+{
+  "name": "invoice-pdf-generator",
+  "version": "1.0.0",
+  "description": "Configurable HTML-to-PDF invoice generator. Set your logo and company details once, then generate branded invoice PDFs from order data.",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "bin": {
+    "invoice": "src/cli.js"
+  },
+  "scripts": {
+    "generate": "node src/cli.js",
+    "batch": "node src/batch.js",
+    "csv": "node src/csv-batch.js",
+    "demo": "node src/cli.js --data data/sample-invoice.json --out output/invoice.pdf",
+    "demo:batch": "node src/batch.js --data data/sample-batch.json --logo assets/logo.svg --out output/batch",
+    "test": "node test/test.js"
+  },
+  "keywords": [
+    "invoice",
+    "pdf",
+    "html-to-pdf",
+    "puppeteer",
+    "billing"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^24.10.0"
+  }
+}
