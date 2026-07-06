@@ -112,8 +112,6 @@
   }
   .btn-primary { background: #111827; color: #fff; flex: 1; padding: 11px; font-size: 13.5px; }
   .btn-primary:hover { background: #000; }
-  .print-count { display: flex; align-items: center; font-size: 12px; color: #6b7280; white-space: nowrap; padding-left: 2px; }
-  .print-count b { color: #111827; font-size: 14px; margin: 0 3px; }
 
   /* ---------- Invoice preview (mirrors src/template.js) ---------- */
   .invoice-shell {
@@ -280,9 +278,6 @@
 <div class="action-bar">
   <button class="btn-primary" id="downloadBtn">⬇ Download PDF</button>
   <button class="btn-light" id="printBtn">Print</button>
-  <div class="print-count" id="printCount" title="Total times Print / Download PDF was clicked on this device">
-    Printed <b id="printCountNum">0</b>×
-  </div>
 </div>
 
 <script>
@@ -510,28 +505,9 @@ document.getElementById("logoReset").addEventListener("click", function () {
   renderInvoice();
 });
 
-// ---------- download / print + click tracking ----------
-// Count is persisted server-side to invoice-builder/print-count.txt.
-function setPrintCount(n) {
-  document.getElementById("printCountNum").textContent = (n === null || n === undefined) ? "–" : n;
-}
-function loadPrintCount() {
-  fetch("/print-count")
-    .then(function (r) { return r.json(); })
-    .then(function (d) { setPrintCount(d.count); })
-    .catch(function () { setPrintCount(null); });   // opened as a file, no server
-}
-function trackPrint() {
-  // Increment the repo counter, then open the print dialog regardless of result.
-  fetch("/print-count", { method: "POST" })
-    .then(function (r) { return r.json(); })
-    .then(function (d) { setPrintCount(d.count); })
-    .catch(function () { /* no server — still allow printing */ })
-    .then(function () { window.print(); });
-}
-
-document.getElementById("downloadBtn").addEventListener("click", trackPrint);
-document.getElementById("printBtn").addEventListener("click", trackPrint);
+// ---------- download / print ----------
+document.getElementById("downloadBtn").addEventListener("click", function () { window.print(); });
+document.getElementById("printBtn").addEventListener("click", function () { window.print(); });
 
 // ---------- init ----------
 (function init() {
@@ -562,7 +538,6 @@ document.getElementById("printBtn").addEventListener("click", trackPrint);
   });
   renderItems();
   renderInvoice();
-  loadPrintCount();
 })();
 </script>
 </body>
