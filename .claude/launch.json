@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "invoice-builder",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["invoice-builder/server.js"],
+      "port": 4599
+    }
+  ]
+}
